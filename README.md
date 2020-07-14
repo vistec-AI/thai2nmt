@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/vistec-AI/thai2nmt/blob/master/LICENSE)
 
 
-This repository includes code to reproduce our experiments on Thai-English NMT models and scripts to download the datasets (`scb-mt-en-th-2020`, `mt-opus` and `scb-mt-en-th-2020+mt-opus`) along with the train/validaiton/test split that we used in the experiments. 
+This repository includes code to reproduce our experiments on Thai-English NMT models and scripts to download the datasets (`scb-mt-en-th-2020`, `mt-opus` and `scb-mt-en-th-2020+mt-opus`) along with the train/validation/test split that we used in the experiments. 
 
 Our experiments are listed below.
 
