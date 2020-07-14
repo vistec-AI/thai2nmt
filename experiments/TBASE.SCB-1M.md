@@ -324,7 +324,9 @@ bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 7 ./dataset/binari
 ## Model Evaluation
 
 
-### 1. Evaluate models on `scb-mt-en-th-2020` test set. The total number of segment pairs is 100,177.
+### 1. Evaluate models on `scb-mt-en-th-2020` test set. 
+
+The total number of segment pairs is 100,177.
 
 Note: The first argument indicate the ID of GPU. In this case, we train each model on 1 GPU (`GPU_ID`: 0-7).
 
@@ -464,7 +466,9 @@ sentencepiece \
 ```
 
 
-### 2. Evaluate models on Thai-Englush IWSLT 2015 test sets (tst2010-2014). The total number of segment pairs is 4,242.
+### 2. Evaluate models on Thai-Englush IWSLT 2015 test sets (tst2010-2014). 
+
+The total number of segment pairs is 4,242.
 
 #### 2.1 Evaluate models on th→en direction
 
