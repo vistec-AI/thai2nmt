@@ -548,7 +548,9 @@ sentencepiece \
 Pretokenize Thai target sentences with PyThaiNLP's **newmm** dictionary-based word tokenizer with the following script.
 
 ```
-python ./scripts/th_newmm_space_tokenize.py ./iwslt_2015/test/tst2010-2013_th-en.th ./iwslt_2015/test/tst2010-2013_th-en.th.ref.tok
+python ./scripts/th_newmm_space_tokenize.py \
+./iwslt_2015/test/tst2010-2013_th-en.th \
+./iwslt_2015/test/tst2010-2013_th-en.th.ref.tok
 ```
 
 2.2.1 newmm→moses
