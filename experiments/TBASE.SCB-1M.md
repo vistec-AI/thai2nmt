@@ -266,19 +266,19 @@ Note: The first argument indicate the ID of GPU. In this case, we train each mod
 
 ### 1. Train models for th→en direction
 
-1.1 moses→newmm
+1.1 newmm→moses
 
 ```bash
 bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 0 ./dataset/binarized/scb-mt-en-th-2020/th-en/newmm-moses/130000-130000/ scb-mt-en-th-2020/th-en/newmm-moses/130000-130000 9750 150
 ```
 
-1.2 moses→spm
+1.2 newmm→spm
 
 ```bash
 bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 1 ./dataset/binarized/scb-mt-en-th-2020/th-en/newmm-spm/130000-16000/ scb-mt-en-th-2020/th-en/newmm-spm/130000-16000 9750 150
 ```
 
-1.3 spm→newmm
+1.3 spm→moses
 
 ```bash
 bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 2 ./dataset/binarized/scb-mt-en-th-2020/th-en/spm-moses/16000-130000/ scb-mt-en-th-2020/th-en/spm-moses/16000-130000 9750 150
@@ -292,20 +292,20 @@ bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 3 ./dataset/binari
 
 ### 2. Train models for en→th direction
 
-2.1 newmm→moses
+2.1 moses→newmm_space
 
 ```bash
 bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 4 ./dataset/binarized/scb-mt-en-th-2020/en-th/moses-newmm_space/130000-130000/ scb-mt-en-th-2020/en-th/moses-newmm_space/130000-130000 9750 150
 ```
 
-2.2 newmm→spm
+2.2 moses→spm
 
 ```bash
 bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 5  ./dataset/binarized/scb-mt-en-th-2020/en-th/moses-spm/130000-16000/ scb-mt-en-th-2020/en-th/moses-spm/130000-16000 9750 150
 
 ```
 
-2.3 spm→moses
+2.3 spm→newmm_space
 
 ```bash
 bash ./scripts/fairseq_train.transformer_base.single_gpu.fp16 6 ./dataset/binarized/scb-mt-en-th-2020/en-th/spm-newmm_space/16000-130000/ scb-mt-en-th-2020/en-th/spm-newmm_space/16000-130000 9750 150
