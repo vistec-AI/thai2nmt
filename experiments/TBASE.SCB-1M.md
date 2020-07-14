@@ -36,7 +36,7 @@ We train each model on 1 NVIDIA Tesla V100 GPU (as a part of [DGX-1](https://ima
     1.3 Install [SentencePiece](https://github.com/google/sentencepiece) from source (required root permission).
 
     You can follow the installation manual from https://github.com/google/sentencepiece#c-from-source or from our code snippet below.
-    
+
     Install required tools and libraries for building SentencePiece
 
     ```
@@ -350,7 +350,7 @@ word \
 1.1.2 moses→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 bash ./scripts/evaluate_model.test_set.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/th-en/newmm-spm/130000-16000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/th-en/newmm-spm/130000-16000 \
 ./dataset/tokenized/scb-mt-en-th-2020/th-en/newmm-spm/test.th \
@@ -366,7 +366,7 @@ sentencepiece \
 1.1.3 spm→newmm
 
 ```bash
-CUDA_VISIBLE_DEVICES=2 bash ./scripts/evaluate_model.test_set.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/th-en/spm-moses/16000-130000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/th-en/spm-moses/16000-130000 \
 ./dataset/tokenized/scb-mt-en-th-2020/th-en/spm-moses/test.th \
@@ -382,7 +382,7 @@ word \
 1.1.4 spm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=3 bash ./scripts/evaluate_model.test_set.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/th-en/spm-spm/32000-joined/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/th-en/spm-spm/32000-joined \
 ./dataset/tokenized/scb-mt-en-th-2020/th-en/spm-spm/test.th \
@@ -402,7 +402,7 @@ sentencepiece \
 1.2.1 newmm→moses
 
 ```bash
-CUDA_VISIBLE_DEVICES=4 bash ./scripts/evaluate_model.test_set.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/en-th/moses-newmm_space/130000-130000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/en-th/moses-newmm_space/130000-130000 \
 ./dataset/tokenized/scb-mt-en-th-2020/en-th/moses-newmm_space/test.en \
@@ -434,7 +434,7 @@ sentencepiece \
 1.2.3 spm→moses
 
 ```bash
-CUDA_VISIBLE_DEVICES=6 bash ./scripts/evaluate_model.test_set.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/en-th/spm-newmm_space/16000-130000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/en-th/spm-newmm_space/16000-130000 \
 ./dataset/tokenized/scb-mt-en-th-2020/en-th/spm-newmm_space/test.en \
@@ -450,7 +450,7 @@ word \
 1.2.4 spm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=7 bash ./scripts/evaluate_model.test_set.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/en-th/spm-spm/32000-joined/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/en-th/spm-spm/32000-joined \
 ./dataset/tokenized/scb-mt-en-th-2020/en-th/spm-spm/test.en \
@@ -488,7 +488,7 @@ word \
 2.1.2 moses→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/th-en/newmm-spm/130000-16000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/th-en/newmm-spm/130000-16000 \
 th \
@@ -505,7 +505,7 @@ sentencepiece \
 2.1.3 spm→newmm
 
 ```bash
-CUDA_VISIBLE_DEVICES=2 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/th-en/spm-moses/16000-130000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/th-en/spm-moses/16000-130000 \
 th \
@@ -522,7 +522,7 @@ word \
 2.1.4 spm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=3 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/th-en/spm-spm/32000-joined/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/th-en/spm-spm/32000-joined \
 th \
@@ -541,18 +541,24 @@ sentencepiece \
 #### 2.2 Evaluate models on en→th direction
 
 
+Pretokenize Thai target sentences with PyThaiNLP's **newmm** dictionary-based word tokenizer with the following script.
+
+```
+python ./scripts/th_newmm_space_tokenize.py ./iwslt_2015/test/tst2010-2013_th-en.th ./iwslt_2015/test/tst2010-2013_th-en.th.ref.tok
+```
+
 2.2.1 newmm→moses
 
 ```bash
-CUDA_VISIBLE_DEVICES=4 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/en-th/moses-newmm_space/130000-130000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/en-th/moses-newmm_space/130000-130000 \
 en \
 th \
 word \
 word \
-./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
+./iwslt_2015/test/tst2010-2013_th-en.th \
 ./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/moses-newmm_space/130000-130000/checkpoint_best \
 20000 \
 4    
@@ -568,8 +574,8 @@ en \
 th \
 word \
 sentencepiece \
-./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
+./iwslt_2015/test/tst2010-2013_th-en.th \
 ./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/moses-spm/130000-16000/checkpoint_best \
 20000 \
 4
@@ -578,15 +584,15 @@ sentencepiece \
 2.2.3 spm→moses
 
 ```bash
-CUDA_VISIBLE_DEVICES=6 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/en-th/spm-newmm_space/16000-130000/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/en-th/spm-newmm_space/16000-130000 \
 en \
 th \
 sentencepiece \
 word \
-./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
+./iwslt_2015/test/tst2010-2013_th-en.th \
 ./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/spm-newmm_space/16000-130000/checkpoint_best \
 20000 \
 4
@@ -597,15 +603,15 @@ sentencepiece \
 2.2.4 spm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=7 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
 ./checkpoints/scb-mt-en-th-2020/en-th/spm-spm/32000-joined/checkpoint_best.pt \
 ./dataset/binarized/scb-mt-en-th-2020/en-th/spm-spm/32000-joined \
 en \
 th \
 sentencepiece \
 sentencepiece \
-./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
+./iwslt_2015/test/tst2010-2013_th-en.th \
 ./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/spm-spm/32000-joined/checkpoint_best \
 20000 \
 4 \
