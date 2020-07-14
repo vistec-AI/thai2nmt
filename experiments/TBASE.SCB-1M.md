@@ -466,7 +466,7 @@ sentencepiece \
 ```
 
 
-### 2. Evaluate models on Thai-Englush IWSLT 2015 test sets (tst2010-2014). 
+### 2. Evaluate models on Thai-Englush IWSLT 2015 test sets (tst2010-2013). 
 
 The total number of segment pairs is 4,242.
 
