@@ -37,20 +37,6 @@ BATCH_SIZE=$9
 
 BEAM_WIDTH=${10}
 
-# 10. Specify other option to the  fairseq-interactive
-
-OPT=${11}
-
-#### Flow: 
-
-# 1. Send content of `SRC_TEST_FILE_PATH` to fairseq-interactive
-# 2. Then,
-#   2.1 Load dictionary of the model `MODEL_BIN_DIR`
-#   2.2 Specify source and target language `SRC_LANG`, `TGT_LANG`
-#   2.3 Specify path to thr model checkpoint `MODEL_PATH`
-#   2.4 Specify batch size (i.e. number of sentence per batch) `BATCH_SIZE`
-#   2.5 Specify beam size `BEAM_WIDTH`
-#   2.6 Specify the name of BPE tokenizer (`OPT`)
 mkdir -p $TRANSLATION_RESULT_DIR
 
 echo "Begin translation with max tokens: ${BATCH_SIZE}"
@@ -63,7 +49,7 @@ cat $SRC_TEST_FILE_PATH \
       --buffer-size 2500 \
       --fp16 \
       --max-tokens $BATCH_SIZE \
-      --beam $BEAM_WIDTH $OPT \
+      --beam $BEAM_WIDTH \
     > $TRANSLATION_RESULT_DIR/hypo.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.out
 
 echo "Done translation"
