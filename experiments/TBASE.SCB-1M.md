@@ -333,7 +333,7 @@ Note: The first argument indicate the ID of GPU. In this case, we train each mod
     
 #### 1.1 Evaluate models on th→en direction
 
-1.1.1 moses→newmm
+1.1.1 newmm→moses
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
@@ -349,7 +349,7 @@ word \
 4
 ```
 
-1.1.2 moses→spm
+1.1.2 newmm→spm
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
@@ -365,7 +365,7 @@ sentencepiece \
 4
 ```
 
-1.1.3 spm→newmm
+1.1.3 spm→moses
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
@@ -401,7 +401,7 @@ sentencepiece \
 #### 1.2 Evaluate models on en→th direction
 
 
-1.2.1 newmm→moses
+1.2.1 moses→newmm_space
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
@@ -417,7 +417,7 @@ word \
 4    
 ```
 
-1.2.2 newmm→spm
+1.2.2 moses→spm
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
@@ -433,7 +433,7 @@ sentencepiece \
 4
 ```
 
-1.2.3 spm→moses
+1.2.3 spm→newmm_space
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.test_set.fp16.sh \
@@ -472,7 +472,7 @@ The total number of segment pairs is 4,242.
 
 #### 2.1 Evaluate models on th→en direction
 
-2.1.1 moses→newmm
+2.1.1 newmm→moses
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
@@ -489,7 +489,7 @@ word \
 4 
 ```
 
-2.1.2 moses→spm
+2.1.2 newmm→spm
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
@@ -506,7 +506,7 @@ sentencepiece \
 4
 ```
 
-2.1.3 spm→newmm
+2.1.3 spm→moses
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
@@ -553,7 +553,7 @@ python ./scripts/th_newmm_space_tokenize.py \
 ./iwslt_2015/test/tst2010-2013_th-en.th.ref.tok
 ```
 
-2.2.1 newmm→moses
+2.2.1 moses→newmm_space
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
@@ -570,7 +570,7 @@ word \
 4    
 ```
 
-2.2.2 newmm→spm
+2.2.2 moses→spm
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
@@ -587,7 +587,7 @@ sentencepiece \
 4
 ```
 
-2.2.3 spm→moses
+2.2.3 spm→newmm_space
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
