@@ -516,7 +516,8 @@ th \
 en \
 sentencepiece \
 word \
-./dataset/split/scb-mt-en-th-2020/test.detok.en \
+./iwslt_2015/test/tst2010-2013_th-en.th \
+./iwslt_2015/test/tst2010-2013_th-en.en \
 ./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/th-en/spm-moses/16000-130000/checkpoint_best \
 20000 \
 4 \
