@@ -27,7 +27,7 @@ TRANSLATION_RESULT_DIR=$9
 
 # 7. Specify batch size 
 
-MAX_TOKENS=${10}
+aarMAX_SENTENCES=${10}
 
 # 8. Specify BEAM WIDTH
 
@@ -62,7 +62,7 @@ then
 
 fi
 
-echo "Begin translation with max tokens: ${MAX_TOKENS}"
+echo "Begin translation,  max sentences per mini-batch: ${MAX_SENTENCES}"
 if [ "$TGT_TOKEN" = "sentencepiece" ]
 then
     cat $TEST_SRC_PATH.src.$SRC_LANG.$SRC_TOKEN.tok \
@@ -70,9 +70,9 @@ then
         --task translation \
         --source-lang $SRC_LANG --target-lang $TGT_LANG \
         --path $MODEL_PATH \
-        --buffer-size 2500 \
+        --buffer-size 128 \
         --fp16 \
-        --max-tokens $MAX_TOKENS \
+        --max-sentences $MAX_SENTENCES \
         --beam $BEAM_WIDTH --remove-bpe=sentencepiece \
         > $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.out
 else
@@ -81,9 +81,9 @@ else
         --task translation \
         --source-lang $SRC_LANG --target-lang $TGT_LANG \
         --path $MODEL_PATH \
-        --buffer-size 2500 \
+        --buffer-size 128 \
         --fp16 \
-        --max-tokens $MAX_TOKENS \
+        --max-sentences $MAX_SENTENCES \
         --beam $BEAM_WIDTH \
         > $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.out
 fi
