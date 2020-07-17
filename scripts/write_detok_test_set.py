@@ -5,7 +5,7 @@ import os
 import csv
 from functools import partial
 
-from sacremoses import MosesTokenizer, MosesDetokenizer
+from mosestokenizer import MosesTokenizer, MosesDetokenizer
 from pythainlp.tokenize import word_tokenize
 
 
@@ -32,13 +32,13 @@ if __name__ == '__main__':
     test_df = pd.read_csv(test_filepath, encoding='utf-8')
 
     
-    en_tokenizer = MosesTokenizer(lang='en')
-    en_detokenizer = MosesDetokenizer(lang='en')
+    en_tokenizer = MosesTokenizer()
+    en_detokenizer = MosesDetokenizer()
 
-    test_df['en'] = test_df['en'].apply(lambda x: en_detokenizer.detokenize(en_tokenizer.tokenize(x)))
+    test_df['en'] = test_df['en'].apply(lambda x: en_detokenizer(en_tokenizer(x)))
     test_df['th'] = test_df['th'].apply(lambda x: ' '.join(th_word_space_tokenize(x))).apply(th_detokenize)
 
-    test_df[['en']].to_csv(os.path.join(args.split_directory, 'test.detok.en'), encoding='utf-8', sep="\t", index=False, header=False, escapechar="\\", quotechar="", quoting=csv.QUOTE_NONE)
-    test_df[['th']].to_csv(os.path.join(args.split_directory, 'test.detok.th'), encoding='utf-8', sep="\t", index=False, header=False, escapechar="\\", quotechar="", quoting=csv.QUOTE_NONE)
+    test_df[['en']].to_csv(os.path.join(args.split_directory, 'test.detok.en'), encoding='utf-8', sep="\t", index=False, header=False, escapechar="", quotechar="", quoting=csv.QUOTE_NONE)
+    test_df[['th']].to_csv(os.path.join(args.split_directory, 'test.detok.th'), encoding='utf-8', sep="\t", index=False, header=False, escapechar="", quotechar="", quoting=csv.QUOTE_NONE)
     
     print('Done writing test set into text files.')
