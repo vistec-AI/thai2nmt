@@ -433,7 +433,7 @@ The total number of segment pairs is 4,242.
 2.1.1 newmm→moses
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/th-en/newmm-moses/130000-130000/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/th-en/newmm-moses/130000-130000 \
 th \
@@ -450,7 +450,7 @@ word \
 2.1.2 newmm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/th-en/newmm-spm/130000-16000/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/th-en/newmm-spm/130000-16000 \
 th \
@@ -467,7 +467,7 @@ sentencepiece \
 2.1.3 spm→moses
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/th-en/spm-moses/16000-130000/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/th-en/spm-moses/16000-130000 \
 th \
@@ -485,7 +485,7 @@ word \
 2.1.4 spm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/th-en/spm-spm/32000-joined/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/th-en/spm-spm/32000-joined \
 th \
@@ -515,7 +515,7 @@ python ./scripts/th_newmm_space_tokenize.py \
 2.2.1 moses→newmm_space
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/en-th/moses-newmm_space/130000-130000/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/en-th/moses-newmm_space/130000-130000 \
 en \
@@ -532,7 +532,7 @@ word \
 2.2.2 moses→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/en-th/moses-spm/130000-16000/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/en-th/moses-spm/130000-16000 \
 en \
@@ -549,7 +549,7 @@ sentencepiece \
 2.2.3 spm→newmm_space
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/en-th/spm-newmm_space/16000-130000/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/en-th/spm-newmm_space/16000-130000 \
 en \
@@ -568,7 +568,7 @@ sentencepiece \
 2.2.4 spm→spm
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.fp16.sh \
+CUDA_VISIBLE_DEVICES=0 bash ./scripts/evaluate_model.iwslt2015.sh \
 ./checkpoints/mt-opus/en-th/spm-spm/32000-joined/checkpoint_best.pt \
 ./dataset/binarized/mt-opus/en-th/spm-spm/32000-joined \
 en \
