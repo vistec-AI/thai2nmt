@@ -71,7 +71,6 @@ then
         --source-lang $SRC_LANG --target-lang $TGT_LANG \
         --path $MODEL_PATH \
         --buffer-size 128 \
-        --fp16 \
         --max-sentences $MAX_SENTENCES \
         --beam $BEAM_WIDTH --remove-bpe=sentencepiece \
         > $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.out
@@ -82,7 +81,6 @@ else
         --source-lang $SRC_LANG --target-lang $TGT_LANG \
         --path $MODEL_PATH \
         --buffer-size 128 \
-        --fp16 \
         --max-sentences $MAX_SENTENCES \
         --beam $BEAM_WIDTH \
         > $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.out
