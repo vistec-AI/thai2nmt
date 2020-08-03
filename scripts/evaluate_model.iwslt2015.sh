@@ -27,7 +27,7 @@ TRANSLATION_RESULT_DIR=$9
 
 # 7. Specify batch size 
 
-aarMAX_SENTENCES=${10}
+MAX_SENTENCES=${10}
 
 # 8. Specify BEAM WIDTH
 
@@ -103,7 +103,11 @@ then
         sacremoses detokenize -j 32 -l en < $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.sys > $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.detok.sys
 
         # 5a. Compute BLEU score with sacrebleu 
+        echo "BLEU cased"
         cat $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.detok.sys | sacrebleu $TEST_REF_PATH
+        
+        echo "BLEU uncased"
+        cat $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.detok.sys | sacrebleu -lc $TEST_REF_PATH
 
     elif [ "$TGT_LANG" = "th" ]
     then
@@ -125,8 +129,11 @@ elif [ "$TGT_TOKEN" = "sentencepiece" ]
 then
     if [ "$TGT_LANG" = "en" ]
     then
-
+        echo "BLEU cased"
         cat $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.sys | sacrebleu $TEST_REF_PATH
+        
+        echo "BLEU uncased"
+        cat $TRANSLATION_RESULT_DIR/hypo.IWSLT2015.beam-$BEAM_WIDTH.$SRC_LANG-$TGT_LANG.$TGT_LANG.sys | sacrebleu -lc $TEST_REF_PATH
     
     elif [ "$TGT_LANG" = "th" ]
     then
