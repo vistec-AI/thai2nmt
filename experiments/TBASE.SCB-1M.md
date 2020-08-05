@@ -498,7 +498,7 @@ word \
 sentencepiece \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/th-en/newmm-spm/130000-16000/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/th-en/newmm-spm/130000-16000/checkpoint_best \
 64 \
 4
 ```
@@ -515,7 +515,7 @@ sentencepiece \
 word \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/th-en/spm-moses/16000-130000/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/th-en/spm-moses/16000-130000/checkpoint_best \
 64 \
 4 \
 ./dataset/spm/scb-mt-en-th-2020/th-en/spm.th.v-16000.cased.model
@@ -533,7 +533,7 @@ sentencepiece \
 sentencepiece \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/th-en/spm-spm/32000-joined/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/th-en/spm-spm/32000-joined/checkpoint_best \
 64 \
 4 \
 ./dataset/spm/scb-mt-en-th-2020/th-en/spm.th.v-16000.cased.model
@@ -563,7 +563,7 @@ word \
 word \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/moses-newmm_space/130000-130000/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/en-th/moses-newmm_space/130000-130000/checkpoint_best \
 64 \
 4    
 ```
@@ -580,7 +580,7 @@ word \
 sentencepiece \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/moses-spm/130000-16000/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/en-th/moses-spm/130000-16000/checkpoint_best \
 64 \
 4
 ```
@@ -597,7 +597,7 @@ sentencepiece \
 word \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/spm-newmm_space/16000-130000/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/en-th/spm-newmm_space/16000-130000/checkpoint_best \
 64 \
 4
 sentencepiece \
@@ -616,7 +616,7 @@ sentencepiece \
 sentencepiece \
 ./iwslt_2015/test/tst2010-2013_th-en.en \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
-./translation_results/scb-mt-en-th-2020@eval_on@iwslt201/en-th/spm-spm/32000-joined/checkpoint_best \
+./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/en-th/spm-spm/32000-joined/checkpoint_best \
 64 \
 4 \
 ./dataset/spm/scb-mt-en-th-2020/en-th/spm.en.v-16000.cased.model
