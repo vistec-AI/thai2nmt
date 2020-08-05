@@ -599,8 +599,7 @@ word \
 ./iwslt_2015/test/tst2010-2013_th-en.th \
 ./translation_results/scb-mt-en-th-2020@eval_on@iwslt2015/en-th/spm-newmm_space/16000-130000/checkpoint_best \
 64 \
-4
-sentencepiece \
+4 \
 ./dataset/spm/scb-mt-en-th-2020/en-th/spm.en.v-16000.cased.model
 ```
 
