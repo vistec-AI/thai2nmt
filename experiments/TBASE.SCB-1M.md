@@ -54,7 +54,7 @@ We train each model on 1 NVIDIA Tesla V100 GPU (as a part of [DGX-1](https://ima
     Download `scb-mt-en-th-2020` dataset - version 1.0 from the following script. 
     
     ```
-    bash scripts/download_dataset.scb_mt.sh 1.0
+    bash scripts/download_dataset.scb-1m.sh 1.0
     ```   
 
     Note: The first argument indicates the version of `scb-mt-en-th-2020` dataset. (default value is `1.0`) 
