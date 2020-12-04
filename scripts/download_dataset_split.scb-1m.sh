@@ -9,6 +9,8 @@ echo "https://github.com/vistec-AI/thai2nmt/releases/download/scb-mt-en-th-2020_
 echo "https://github.com/vistec-AI/thai2nmt/releases/download/scb-mt-en-th-2020_v${VERSION}/en-th.merged_stratified.val.csv"
 echo "https://github.com/vistec-AI/thai2nmt/releases/download/scb-mt-en-th-2020_v${VERSION}/en-th.merged_stratified.test.csv"
 
+mkdir -p ./dataset/split/scb-mt-en-th-2020
+
 curl -Lk https://github.com/vistec-AI/thai2nmt/releases/download/scb-mt-en-th-2020_v${VERSION}/en-th.merged_stratified.train.csv\
      -o ./dataset/split/scb-mt-en-th-2020/en-th.merged_stratified.train.csv
 
