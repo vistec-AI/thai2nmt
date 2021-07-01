@@ -12,3 +12,6 @@ Our experiments are listed below.
 
 - [Experiment #2 TBASE.MT-OPUS](./experiments/TBASE.MT-OPUS.md) -- Transformer BASE models trained on English-Thai datasets listed in [Open Parallel Corpus (OPUS)](http://opus.nlpl.eu/)
   
+
+- [Experiment #3 TBASE.SCB-1M+MT-OPUS](./experiments/TBASE.SCB-1M+MT-OPUS.md) -- Transformer BASE models trained on English-Thai [scb-mt-en-th-2020 v1.0](https://github.com/vistec-AI/dataset-releases/releases/tag/scb-mt-en-th-2020_v1.0) and datasets listed in [Open Parallel Corpus (OPUS)](http://opus.nlpl.eu/)
+  
