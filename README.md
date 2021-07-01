@@ -15,3 +15,24 @@ Our experiments are listed below.
 
 - [Experiment #3 TBASE.SCB-1M+MT-OPUS](./experiments/TBASE.SCB-1M+MT-OPUS.md) -- Transformer BASE models trained on English-Thai [scb-mt-en-th-2020 v1.0](https://github.com/vistec-AI/dataset-releases/releases/tag/scb-mt-en-th-2020_v1.0) and datasets listed in [Open Parallel Corpus (OPUS)](http://opus.nlpl.eu/)
   
+
+<br>
+<br>
+
+BibTeX entry and citation info
+
+```text
+@Article{Lowphansirikul2021,
+    author={Lowphansirikul, Lalita
+            and Polpanumas, Charin
+            and Rutherford, Attapol T.
+            and Nutanong, Sarana},
+    title={A large English--Thai parallel corpus from the web and machine-generated text},
+    journal={Language Resources and Evaluation},
+    year={2021},
+    month={Mar},
+    day={30},
+    issn={1574-0218},
+    doi={10.1007/s10579-021-09536-6},
+    url={https://doi.org/10.1007/s10579-021-09536-6}
+```
